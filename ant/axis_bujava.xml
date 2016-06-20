@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<project default="build-jar" basedir=".">
+
+<echo message="pulling in property files"/>
+<property file="axis_bujava.properties"/>
+	
+<echo message="calling the web services generation ant task: axis_bujava"/>
+	<target name="build-jar">
+	   <jar destfile="${web.dir}/lib/util.jar"
+	      basedir="${build.dir}/classes"
+	      includes="faxapp/util/**"
+	      excludes="**/Test.class">
+
+	      <manifest>
+	         <attribute name="Main-Class" value="com.tutorialspoint.util.FaxUtil"/>
+	      </manifest>
+
+	   </jar>
+	</target>
+  
+</project>
+
